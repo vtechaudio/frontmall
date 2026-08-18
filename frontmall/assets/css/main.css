@@ -116,7 +116,7 @@ h1,h2,h3,h4{line-height:1.18;margin:0 0 .5em;letter-spacing:-.01em}
 .fm-section__head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
 .fm-section__title{font-size:24px;margin:0;position:relative;padding-left:16px}
 .fm-section__title::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:5px;border-radius:4px;background:linear-gradient(var(--fm-primary),var(--fm-accent))}
-.fm-section__more{color:var(--fm-primary-dark);font-weight:700;font-size:14px;white-space:nowrap}
+.fm-section__more{color:var(--fm-primary-darker);font-weight:700;font-size:14px;white-space:nowrap}
 .fm-section__foot{text-align:center;margin-top:28px}
 
 /* Hero */

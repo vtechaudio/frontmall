@@ -30,8 +30,8 @@ if ( is_wp_error( $terms ) || empty( $terms ) ) {
 			<h2 class="fm-section__title"><?php esc_html_e( 'Featured Categories', 'frontmall' ); ?></h2>
 			<?php if ( count( $terms ) > 6 ) : ?>
 				<div class="fm-scroller__nav" aria-hidden="true">
-					<button class="fm-scroller__btn fm-scroller__btn--prev" type="button" data-scroll="prev" aria-label="<?php esc_attr_e( 'Scroll categories left', 'frontmall' ); ?>">&#8249;</button>
-					<button class="fm-scroller__btn fm-scroller__btn--next" type="button" data-scroll="next" aria-label="<?php esc_attr_e( 'Scroll categories right', 'frontmall' ); ?>">&#8250;</button>
+					<button class="fm-scroller__btn fm-scroller__btn--prev" type="button" data-scroll="prev" tabindex="-1" aria-label="<?php esc_attr_e( 'Scroll categories left', 'frontmall' ); ?>">&#8249;</button>
+					<button class="fm-scroller__btn fm-scroller__btn--next" type="button" data-scroll="next" tabindex="-1" aria-label="<?php esc_attr_e( 'Scroll categories right', 'frontmall' ); ?>">&#8250;</button>
 				</div>
 			<?php endif; ?>
 		</div>
