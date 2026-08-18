@@ -1,0 +1,20 @@
+/*
+Theme Name: Frontmall
+Theme URI: https://frontmallke.com
+Author: Pimofy Digital
+Author URI: https://pimofydigital.com
+Description: Frontmall - a premium, conversion-focused WooCommerce theme engineered for speed, accessibility (WCAG 2.2 AA), SEO and Google Merchant Center compliance. Built for the Kenyan and international market.
+Version: 0.3.3
+Requires at least: 6.4
+Tested up to: 6.6
+Requires PHP: 8.1
+WC requires at least: 8.0
+WC tested up to: 9.3
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: frontmall
+Tags: e-commerce, shop, ajax, fast, accessibility-ready, translation-ready, custom-logo, custom-menu, featured-images, threaded-comments, rtl-language-support
+*/
+
+/* Core visible styles live in assets/css/main.css (enqueued separately for performance).
+   This file only carries the required theme header. */

@@ -1,0 +1,28 @@
+/* Frontmall WooCommerce refinements */
+.woocommerce .fm-shop{padding:28px 20px}
+.woocommerce ul.products{display:grid!important;gap:18px;grid-template-columns:repeat(4,1fr);margin:0;padding:0;list-style:none}
+@media(max-width:1200px){.woocommerce ul.products{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){.woocommerce ul.products{grid-template-columns:repeat(2,1fr)}}
+.woocommerce ul.products li.product{margin:0!important;width:auto!important}
+.woocommerce .price{color:var(--fm-ink);font-weight:800}
+.woocommerce .price ins{color:var(--fm-primary-dark)}
+.woocommerce a.button,.woocommerce button.button,.woocommerce #respond input#submit,.woocommerce .button.alt{background:var(--fm-primary)!important;color:#fff!important;border-radius:8px!important;font-weight:600!important;border:0!important}
+.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce .button.alt:hover{background:var(--fm-primary-dark)!important}
+.woocommerce .woocommerce-message,.woocommerce .woocommerce-info{border-top-color:var(--fm-primary)}
+.woocommerce .woocommerce-message::before,.woocommerce .woocommerce-info::before{color:var(--fm-primary)}
+.woocommerce nav.woocommerce-pagination ul li a,.woocommerce nav.woocommerce-pagination ul li span.current{border-radius:6px}
+.woocommerce span.onsale{background:var(--fm-sale);border-radius:999px}
+.woocommerce div.product .product_title{font-size:28px}
+.woocommerce #reviews h2,.woocommerce-tabs .panel h2{color:var(--fm-ink)}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active{border-bottom-color:var(--fm-primary)}
+/* Trust badges on single product */
+.fm-trust-badges{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0;padding:14px;background:var(--fm-primary-light);border-radius:var(--fm-radius-sm);font-size:13px;font-weight:600}
+
+/* Neutralise the clearfix pseudo-elements that became an empty first grid cell */
+.woocommerce ul.products::before,.woocommerce ul.products::after,
+.woocommerce-page ul.products::before,.woocommerce-page ul.products::after{content:none !important;display:none !important}
+/* Related products: clean spacing, full-width 4-up grid (no sidebar) */
+.woocommerce .related.products,.woocommerce .up-sells{margin-top:44px;clear:both}
+.woocommerce .related.products>h2,.woocommerce .up-sells>h2{margin-bottom:18px;font-size:22px}
+.woocommerce div.product form.cart{margin-bottom:1.4em}
+.woocommerce nav.woocommerce-pagination{margin-top:26px;text-align:center}
