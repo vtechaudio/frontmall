@@ -60,16 +60,16 @@ $fm = frontmall_business();
 		</div>
 
 		<div class="fm-header__actions">
-			<a class="fm-action" href="<?php echo esc_url( function_exists( 'wc_get_account_endpoint_url' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>">
+			<a class="fm-action" href="<?php echo esc_url( function_exists( 'wc_get_account_endpoint_url' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>" aria-label="<?php esc_attr_e( 'Account', 'frontmall' ); ?>">
 				<span class="fm-action__icon" aria-hidden="true">&#128100;</span>
 				<span class="fm-action__label"><?php esc_html_e( 'Account', 'frontmall' ); ?></span>
 			</a>
-			<a class="fm-action fm-action--wishlist" href="<?php echo esc_url( home_url( '/wishlist/' ) ); ?>">
+			<a class="fm-action fm-action--wishlist" href="<?php echo esc_url( home_url( '/wishlist/' ) ); ?>" aria-label="<?php esc_attr_e( 'Wishlist', 'frontmall' ); ?>">
 				<span class="fm-action__icon" aria-hidden="true">&#9825;</span>
 				<span class="fm-action__label"><?php esc_html_e( 'Wishlist', 'frontmall' ); ?></span>
 				<span class="fm-wish-count" data-count="0" hidden></span>
 			</a>
-			<a class="fm-action fm-action--cart" href="<?php echo esc_url( function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' ) ); ?>">
+			<a class="fm-action fm-action--cart" href="<?php echo esc_url( function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' ) ); ?>" aria-label="<?php esc_attr_e( 'Cart', 'frontmall' ); ?>">
 				<span class="fm-action__icon" aria-hidden="true">&#128722;</span>
 				<span class="fm-action__label"><?php esc_html_e( 'Cart', 'frontmall' ); ?></span>
 				<span class="fm-cart-count" data-count="<?php echo esc_attr( function_exists( 'WC' ) && WC()->cart ? (string) WC()->cart->get_cart_contents_count() : '0' ); ?>"><?php echo esc_html( function_exists( 'WC' ) && WC()->cart ? (string) WC()->cart->get_cart_contents_count() : '0' ); ?></span>

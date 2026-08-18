@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FRONTMALL_VERSION', '0.3.3' );
+define( 'FRONTMALL_VERSION', '0.3.4' );
 define( 'FRONTMALL_DIR', get_template_directory() );
 define( 'FRONTMALL_URI', get_template_directory_uri() );
 define( 'FRONTMALL_MIN_PHP', '8.1' );
@@ -71,3 +71,42 @@ Frontmall\Storefront::instance();
 Frontmall\Newsletter::instance();
 
 add_action( 'wp_footer', 'frontmall_render_wa_float' );
+
+/**
+ * Keep the header logo eager, high-priority and correctly sized.
+ *
+ * When a front-end optimisation plugin JS-lazy-loads the site logo it strips
+ * the intrinsic width/height, so the logo renders "unsized" and shifts the
+ * header on load - a Cumulative Layout Shift regression that shows up on
+ * mobile. Forcing loading="eager" + fetchpriority="high" keeps the logo out of
+ * any lazy-load queue and prioritises it; the width/height WordPress already
+ * emits is preserved, so the header box is reserved from first paint.
+ */
+add_filter(
+	'get_custom_logo',
+	static function ( $html ) {
+		if ( ! is_string( $html ) || false === strpos( $html, '<img' ) ) {
+			return $html;
+		}
+		return preg_replace_callback(
+			'/<img\b[^>]*>/',
+			static function ( $m ) {
+				$tag = $m[0];
+				if ( false === strpos( $tag, 'fetchpriority=' ) ) {
+					$tag = str_replace( '<img', '<img fetchpriority="high"', $tag );
+				}
+				if ( preg_match( '/\sloading=(["\'])[^"\']*\1/', $tag ) ) {
+					$tag = preg_replace( '/\sloading=(["\'])[^"\']*\1/', ' loading="eager"', $tag );
+				} else {
+					$tag = str_replace( '<img', '<img loading="eager"', $tag );
+				}
+				if ( false === strpos( $tag, 'decoding=' ) ) {
+					$tag = str_replace( '<img', '<img decoding="async"', $tag );
+				}
+				return $tag;
+			},
+			$html,
+			1
+		);
+	}
+);

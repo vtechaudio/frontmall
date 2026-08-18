@@ -56,7 +56,7 @@ final class Setup {
 
 		// 1:1 catalog imagery for uniform product cards.
 		add_image_size( 'frontmall-card', 400, 400, true );
-		add_image_size( 'frontmall-category', 500, 500, true );
+		add_image_size( 'frontmall-category', 400, 400, true );
 
 		register_default_headers( array() );
 	}
